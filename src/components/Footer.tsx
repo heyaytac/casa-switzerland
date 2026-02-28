@@ -2,27 +2,31 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-gray-50">
-      <div className="container-wide mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-4">
+    <footer className="border-t border-surface-border bg-surface">
+      <div className="container-wide mx-auto px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <span className="text-xl font-bold text-brand-600">CASA</span>
-            <span className="ml-1 text-sm text-gray-500">Switzerland</span>
-            <p className="mt-3 text-sm text-gray-500">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-white">
+                <span className="text-xs font-black text-black">C</span>
+              </div>
+              <span className="text-base font-semibold text-white">CASA</span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-muted">
               Die KI-gestützte Immobilienplattform der Schweiz. Intelligenter
               suchen, schneller finden.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-3 text-sm font-semibold text-gray-900">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-dark">
               Immobilien
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
                 <Link
                   href="/immobilien"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Alle Immobilien
                 </Link>
@@ -30,7 +34,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/immobilien?typ=Wohnung"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Wohnungen
                 </Link>
@@ -38,7 +42,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/immobilien?typ=Haus"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Häuser
                 </Link>
@@ -46,7 +50,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/immobilien?typ=Gewerbe"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Gewerbe
                 </Link>
@@ -55,14 +59,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-3 text-sm font-semibold text-gray-900">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-dark">
               Für Makler
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
                 <Link
                   href="/fuer-makler"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Vorteile
                 </Link>
@@ -70,7 +74,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/fuer-makler/registrieren"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Registrieren
                 </Link>
@@ -78,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/ki-telefonagent"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   KI Telefonagent
                 </Link>
@@ -86,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/dashboard"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Dashboard
                 </Link>
@@ -95,33 +99,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-3 text-sm font-semibold text-gray-900">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-dark">
               Unternehmen
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
                 <Link
                   href="/ueber-uns"
-                  className="text-sm text-gray-500 hover:text-brand-600"
+                  className="text-sm text-muted transition-colors hover:text-white"
                 >
                   Über uns
                 </Link>
               </li>
               <li>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-muted">
                   kontakt@casa-switzerland.ch
                 </span>
               </li>
               <li>
-                <span className="text-sm text-gray-500">
-                  +41 800 CASA CH
-                </span>
+                <span className="text-sm text-muted">+41 800 CASA CH</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-gray-200 pt-6 text-center text-sm text-gray-400">
+        <div className="mt-12 border-t border-surface-border pt-6 text-center text-xs text-muted-dark">
           © {new Date().getFullYear()} CASA Switzerland. Alle Rechte
           vorbehalten.
         </div>

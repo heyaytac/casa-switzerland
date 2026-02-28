@@ -9,21 +9,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#2563eb",
-          600: "#1d4ed8",
-          700: "#1e40af",
-          800: "#1e3a8a",
-          900: "#172554",
+        background: "#000000",
+        surface: {
+          DEFAULT: "#0a0a0a",
+          light: "#111111",
+          lighter: "#181818",
+          border: "#222222",
         },
-        swiss: {
-          red: "#FF0000",
-          white: "#FFFFFF",
+        accent: {
+          DEFAULT: "#6366f1",
+          light: "#818cf8",
+          dark: "#4f46e5",
+        },
+        muted: {
+          DEFAULT: "#888888",
+          dark: "#555555",
+        },
+      },
+      animation: {
+        "fade-in": "fadeIn 0.6s ease-out forwards",
+        "slide-up": "slideUp 0.6s ease-out forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

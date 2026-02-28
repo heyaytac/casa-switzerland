@@ -64,40 +64,42 @@ export default function KiTelefonagentPage() {
     },
     {
       schritt: "Zusammenfassung",
-      detail:
-        "Der Makler erhält sofort eine Zusammenfassung im Dashboard.",
+      detail: "Der Makler erhält sofort eine Zusammenfassung im Dashboard.",
     },
   ];
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-900 to-brand-700 text-white">
-        <div className="container-wide mx-auto px-4 py-20 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[120px]" />
+        </div>
+        <div className="container-wide relative mx-auto px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 text-sm text-brand-200">
+            <div className="mb-6 inline-flex items-center rounded-full border border-surface-border bg-surface-light px-4 py-1.5 text-sm text-muted">
+              <span className="mr-2 h-1.5 w-1.5 rounded-full bg-green-400" />
               Powered by AI
             </div>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Der KI-Telefonagent
               <br />
-              für Schweizer Makler
+              <span className="gradient-text-accent">für Schweizer Makler</span>
             </h1>
-            <p className="mt-5 text-lg text-brand-200">
-              Eine einzige Telefonnummer für alle Ihre Objekte. Unser
-              KI-Agent nimmt Anrufe entgegen, beantwortet Fragen und bringt
-              Ihnen qualifizierte Leads — 24 Stunden am Tag, 7 Tage die
-              Woche.
+            <p className="mt-5 text-lg text-muted">
+              Eine einzige Telefonnummer für alle Ihre Objekte. Unser KI-Agent
+              nimmt Anrufe entgegen, beantwortet Fragen und bringt Ihnen
+              qualifizierte Leads — 24 Stunden am Tag, 7 Tage die Woche.
             </p>
 
-            <div className="mt-10 rounded-xl bg-white/10 p-6 backdrop-blur-sm">
-              <p className="text-sm text-brand-200">
+            <div className="mx-auto mt-10 max-w-sm glass-card p-6 text-center">
+              <p className="text-xs uppercase tracking-wider text-muted-dark">
                 CASA Switzerland KI-Nummer
               </p>
-              <p className="mt-1 text-3xl font-bold tracking-wider">
+              <p className="mt-2 text-3xl font-bold tracking-wider text-white">
                 +41 800 272 200
               </p>
-              <p className="mt-2 text-sm text-brand-300">
+              <p className="mt-2 text-sm text-muted">
                 Testen Sie unseren Agenten — rufen Sie jetzt an!
               </p>
             </div>
@@ -108,23 +110,22 @@ export default function KiTelefonagentPage() {
       {/* Features */}
       <section className="section-padding">
         <div className="container-wide mx-auto">
-          <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-4 text-center text-3xl font-bold text-white">
             Was kann der KI-Telefonagent?
           </h2>
-          <p className="mx-auto mb-12 max-w-xl text-center text-gray-500">
+          <p className="mx-auto mb-12 max-w-xl text-center text-muted">
             Modernste Sprach-KI, trainiert auf den Schweizer Immobilienmarkt.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
-              <div
-                key={f.titel}
-                className="rounded-xl border border-gray-100 p-6 shadow-sm"
-              >
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+              <div key={f.titel} className="glass-card-hover p-6">
+                <h3 className="mb-2 text-lg font-semibold text-white">
                   {f.titel}
                 </h3>
-                <p className="text-sm text-gray-500">{f.beschreibung}</p>
+                <p className="text-sm leading-relaxed text-muted">
+                  {f.beschreibung}
+                </p>
               </div>
             ))}
           </div>
@@ -132,9 +133,9 @@ export default function KiTelefonagentPage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-gray-50 section-padding">
+      <section className="section-padding">
         <div className="container-wide mx-auto">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-12 text-center text-3xl font-bold text-white">
             So funktioniert ein Anruf
           </h2>
 
@@ -142,16 +143,16 @@ export default function KiTelefonagentPage() {
             {ablauf.map((a, i) => (
               <div key={i} className="flex gap-4 pb-8 last:pb-0">
                 <div className="flex flex-col items-center">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-surface-border bg-surface-light text-sm font-bold text-accent-light">
                     {i + 1}
                   </div>
                   {i < ablauf.length - 1 && (
-                    <div className="mt-2 h-full w-0.5 bg-brand-200" />
+                    <div className="mt-2 h-full w-px bg-surface-border" />
                   )}
                 </div>
                 <div className="pb-4">
-                  <h3 className="font-semibold text-gray-900">{a.schritt}</h3>
-                  <p className="mt-1 text-sm text-gray-500">{a.detail}</p>
+                  <h3 className="font-semibold text-white">{a.schritt}</h3>
+                  <p className="mt-1 text-sm text-muted">{a.detail}</p>
                 </div>
               </div>
             ))}
@@ -162,30 +163,28 @@ export default function KiTelefonagentPage() {
       {/* Stats */}
       <section className="section-padding">
         <div className="container-wide mx-auto">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl bg-brand-50 p-6 text-center">
-              <p className="text-3xl font-bold text-brand-600">98%</p>
-              <p className="mt-1 text-sm text-gray-600">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="glass-card p-6 text-center">
+              <p className="text-3xl font-bold text-accent-light">98%</p>
+              <p className="mt-1 text-sm text-muted">
                 Anrufe erfolgreich bearbeitet
               </p>
             </div>
-            <div className="rounded-xl bg-brand-50 p-6 text-center">
-              <p className="text-3xl font-bold text-brand-600">&lt;3 Sek</p>
-              <p className="mt-1 text-sm text-gray-600">
+            <div className="glass-card p-6 text-center">
+              <p className="text-3xl font-bold text-accent-light">&lt;3 Sek</p>
+              <p className="mt-1 text-sm text-muted">
                 Durchschnittliche Antwortzeit
               </p>
             </div>
-            <div className="rounded-xl bg-brand-50 p-6 text-center">
-              <p className="text-3xl font-bold text-brand-600">24/7</p>
-              <p className="mt-1 text-sm text-gray-600">
+            <div className="glass-card p-6 text-center">
+              <p className="text-3xl font-bold text-accent-light">24/7</p>
+              <p className="mt-1 text-sm text-muted">
                 Erreichbarkeit garantiert
               </p>
             </div>
-            <div className="rounded-xl bg-brand-50 p-6 text-center">
-              <p className="text-3xl font-bold text-brand-600">94%</p>
-              <p className="mt-1 text-sm text-gray-600">
-                Kundenzufriedenheit
-              </p>
+            <div className="glass-card p-6 text-center">
+              <p className="text-3xl font-bold text-accent-light">94%</p>
+              <p className="mt-1 text-sm text-muted">Kundenzufriedenheit</p>
             </div>
           </div>
         </div>
@@ -193,27 +192,31 @@ export default function KiTelefonagentPage() {
 
       {/* CTA */}
       <section className="section-padding">
-        <div className="container-wide mx-auto rounded-2xl bg-brand-600 px-8 py-14 text-center text-white">
-          <h2 className="text-3xl font-bold">
-            Lassen Sie die KI für sich arbeiten
-          </h2>
-          <p className="mx-auto mt-3 max-w-lg text-brand-100">
-            Registrieren Sie sich als Makler und aktivieren Sie den
-            KI-Telefonagenten für Ihre Objekte. Keine zusätzlichen Kosten.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/fuer-makler/registrieren"
-              className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
-            >
-              Jetzt als Makler registrieren
-            </Link>
-            <Link
-              href="/fuer-makler"
-              className="inline-flex items-center justify-center rounded-lg border border-white/30 px-8 py-3 font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Alle Makler-Vorteile
-            </Link>
+        <div className="container-wide mx-auto">
+          <div className="relative overflow-hidden rounded-3xl border border-surface-border bg-surface-light p-10 text-center sm:p-16">
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute left-1/2 top-1/2 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/8 blur-[100px]" />
+            </div>
+            <div className="relative">
+              <h2 className="text-3xl font-bold text-white">
+                Lassen Sie die KI für sich arbeiten
+              </h2>
+              <p className="mx-auto mt-3 max-w-lg text-muted">
+                Registrieren Sie sich als Makler und aktivieren Sie den
+                KI-Telefonagenten für Ihre Objekte. Keine zusätzlichen Kosten.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link
+                  href="/fuer-makler/registrieren"
+                  className="btn-primary"
+                >
+                  Jetzt als Makler registrieren
+                </Link>
+                <Link href="/fuer-makler" className="btn-secondary">
+                  Alle Makler-Vorteile
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

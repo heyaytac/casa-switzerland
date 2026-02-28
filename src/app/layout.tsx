@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de-CH">
-      <body className={inter.className}>
+    <html lang="de-CH" className="dark">
+      <body className={`${inter.className} bg-background`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

@@ -4,24 +4,61 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-background text-white antialiased;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.3);
+    color: white;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-gray-200 active:scale-[0.98];
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full border border-surface-border bg-surface-light px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:border-muted-dark hover:bg-surface-lighter active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-dark active:scale-[0.98];
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-surface-border bg-surface-light/80 backdrop-blur-xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-muted-dark hover:bg-surface-lighter/80;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-gray-300 to-muted bg-clip-text text-transparent;
+  }
+
+  .gradient-text-accent {
+    @apply bg-gradient-to-r from-accent-light to-accent bg-clip-text text-transparent;
   }
 
   .section-padding {
-    @apply px-4 py-16 sm:px-6 lg:px-8;
+    @apply px-4 py-20 sm:px-6 lg:px-8;
   }
 
   .container-wide {
     @apply mx-auto max-w-7xl;
+  }
+
+  .input-dark {
+    @apply w-full rounded-xl border border-surface-border bg-surface px-4 py-3 text-sm text-white placeholder-muted transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+  }
+
+  .select-dark {
+    @apply w-full rounded-xl border border-surface-border bg-surface px-4 py-3 text-sm text-white transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+  }
+
+  .label-dark {
+    @apply mb-1.5 block text-sm font-medium text-gray-300;
   }
 }

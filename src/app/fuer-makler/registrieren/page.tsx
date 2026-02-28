@@ -11,10 +11,10 @@ export default function RegistrierenPage() {
     return (
       <div className="section-padding">
         <div className="container-wide mx-auto max-w-lg text-center">
-          <div className="rounded-xl border border-green-200 bg-green-50 p-10">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+          <div className="glass-card p-10">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-green-500/20 bg-green-500/10">
               <svg
-                className="h-8 w-8 text-green-600"
+                className="h-8 w-8 text-green-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -27,10 +27,10 @@ export default function RegistrierenPage() {
                 />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-green-800">
+            <h1 className="text-2xl font-bold text-white">
               Registrierung erfolgreich!
             </h1>
-            <p className="mt-3 text-green-600">
+            <p className="mt-3 text-muted">
               Vielen Dank für Ihre Anmeldung. Wir werden uns innerhalb von 24
               Stunden bei Ihnen melden, um Ihr Konto zu aktivieren.
             </p>
@@ -47,10 +47,10 @@ export default function RegistrierenPage() {
     <div className="section-padding">
       <div className="container-wide mx-auto max-w-2xl">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-900">
+          <h1 className="text-3xl font-bold text-white">
             Makler Registrierung
           </h1>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-muted">
             Erstellen Sie Ihr kostenloses Maklerprofil und starten Sie mit CASA
             Switzerland.
           </p>
@@ -61,80 +61,46 @@ export default function RegistrierenPage() {
             e.preventDefault();
             setSubmitted(true);
           }}
-          className="rounded-xl border border-gray-100 bg-white p-8 shadow-sm"
+          className="glass-card p-8"
         >
           {/* Personal */}
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">
+          <h2 className="mb-4 text-lg font-semibold text-white">
             Persönliche Angaben
           </h2>
-          <div className="mb-6 grid gap-4 sm:grid-cols-2">
+          <div className="mb-8 grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Vorname *
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-              />
+              <label className="label-dark">Vorname *</label>
+              <input type="text" required className="input-dark" />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Nachname *
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-              />
+              <label className="label-dark">Nachname *</label>
+              <input type="text" required className="input-dark" />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                E-Mail *
-              </label>
-              <input
-                type="email"
-                required
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-              />
+              <label className="label-dark">E-Mail *</label>
+              <input type="email" required className="input-dark" />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Telefon *
-              </label>
+              <label className="label-dark">Telefon *</label>
               <input
                 type="tel"
                 required
                 placeholder="+41 ..."
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                className="input-dark"
               />
             </div>
           </div>
 
           {/* Company */}
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">
-            Firma
-          </h2>
-          <div className="mb-6 grid gap-4 sm:grid-cols-2">
+          <h2 className="mb-4 text-lg font-semibold text-white">Firma</h2>
+          <div className="mb-8 grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Firmenname *
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-              />
+              <label className="label-dark">Firmenname *</label>
+              <input type="text" required className="input-dark" />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Kanton *
-              </label>
-              <select
-                required
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-                defaultValue=""
-              >
+              <label className="label-dark">Kanton *</label>
+              <select required className="select-dark" defaultValue="">
                 <option value="" disabled>
                   Kanton wählen
                 </option>
@@ -146,56 +112,46 @@ export default function RegistrierenPage() {
               </select>
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Ort *
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-              />
+              <label className="label-dark">Ort *</label>
+              <input type="text" required className="input-dark" />
             </div>
             <div className="sm:col-span-2">
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Webseite
-              </label>
+              <label className="label-dark">Webseite</label>
               <input
                 type="url"
                 placeholder="https://..."
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                className="input-dark"
               />
             </div>
           </div>
 
           {/* Interests */}
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">
-            Interessen
-          </h2>
-          <div className="mb-6 space-y-3">
+          <h2 className="mb-4 text-lg font-semibold text-white">Interessen</h2>
+          <div className="mb-8 space-y-3">
             <label className="flex items-center gap-3">
               <input
                 type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+                className="h-4 w-4 rounded border-surface-border bg-surface text-accent focus:ring-accent"
               />
-              <span className="text-sm text-gray-700">
+              <span className="text-sm text-gray-300">
                 KI-Telefonagent nutzen
               </span>
             </label>
             <label className="flex items-center gap-3">
               <input
                 type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+                className="h-4 w-4 rounded border-surface-border bg-surface text-accent focus:ring-accent"
               />
-              <span className="text-sm text-gray-700">
+              <span className="text-sm text-gray-300">
                 Automatische Inserat-Erstellung
               </span>
             </label>
             <label className="flex items-center gap-3">
               <input
                 type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+                className="h-4 w-4 rounded border-surface-border bg-surface text-accent focus:ring-accent"
               />
-              <span className="text-sm text-gray-700">
+              <span className="text-sm text-gray-300">
                 Marktanalysen und Preisvorschläge
               </span>
             </label>
@@ -206,11 +162,11 @@ export default function RegistrierenPage() {
             <input
               type="checkbox"
               required
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+              className="mt-0.5 h-4 w-4 rounded border-surface-border bg-surface text-accent focus:ring-accent"
             />
-            <span className="text-sm text-gray-600">
-              Ich akzeptiere die Nutzungsbedingungen und Datenschutzrichtlinien
-              von CASA Switzerland. *
+            <span className="text-sm text-muted">
+              Ich akzeptiere die Nutzungsbedingungen und
+              Datenschutzrichtlinien von CASA Switzerland. *
             </span>
           </label>
 
@@ -218,11 +174,11 @@ export default function RegistrierenPage() {
             Kostenlos registrieren
           </button>
 
-          <p className="mt-4 text-center text-xs text-gray-400">
+          <p className="mt-4 text-center text-xs text-muted-dark">
             Bereits registriert?{" "}
             <Link
               href="/dashboard"
-              className="text-brand-600 hover:text-brand-700"
+              className="text-accent-light hover:text-accent"
             >
               Zum Dashboard
             </Link>

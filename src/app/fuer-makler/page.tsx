@@ -17,7 +17,7 @@ export default function FuerMaklerPage() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={1.5}
           d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
         />
       ),
@@ -30,7 +30,7 @@ export default function FuerMaklerPage() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={1.5}
           d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
         />
       ),
@@ -43,7 +43,7 @@ export default function FuerMaklerPage() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={1.5}
           d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
         />
       ),
@@ -56,7 +56,7 @@ export default function FuerMaklerPage() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={1.5}
           d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
         />
       ),
@@ -69,7 +69,7 @@ export default function FuerMaklerPage() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={1.5}
           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       ),
@@ -82,7 +82,7 @@ export default function FuerMaklerPage() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
+          strokeWidth={1.5}
           d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       ),
@@ -113,30 +113,27 @@ export default function FuerMaklerPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-900 to-brand-700 text-white">
-        <div className="container-wide mx-auto px-4 py-20 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[120px]" />
+        </div>
+        <div className="container-wide relative mx-auto px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Mehr Abschlüsse.
               <br />
-              Weniger Verwaltung.
+              <span className="gradient-text-accent">Weniger Verwaltung.</span>
             </h1>
-            <p className="mt-5 text-lg text-brand-200">
+            <p className="mt-5 text-lg text-muted">
               CASA Switzerland gibt Ihnen den KI-Vorteil. Automatisierte
-              Telefonanrufe, intelligente Inserate und ein Dashboard, das für
-              Sie arbeitet.
+              Telefonanrufe, intelligente Inserate und ein Dashboard, das für Sie
+              arbeitet.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/fuer-makler/registrieren"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
-              >
+              <Link href="/fuer-makler/registrieren" className="btn-primary">
                 Kostenlos registrieren
               </Link>
-              <Link
-                href="/ki-telefonagent"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-8 py-3 font-semibold text-white transition-colors hover:bg-white/10"
-              >
+              <Link href="/ki-telefonagent" className="btn-secondary">
                 KI-Telefonagent entdecken
               </Link>
             </div>
@@ -147,23 +144,20 @@ export default function FuerMaklerPage() {
       {/* Vorteile */}
       <section className="section-padding">
         <div className="container-wide mx-auto">
-          <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-4 text-center text-3xl font-bold text-white">
             Ihre Vorteile als Makler
           </h2>
-          <p className="mx-auto mb-12 max-w-xl text-center text-gray-500">
+          <p className="mx-auto mb-12 max-w-xl text-center text-muted">
             Alles, was Sie brauchen, um Ihr Immobiliengeschäft auf das nächste
             Level zu bringen.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {vorteile.map((v) => (
-              <div
-                key={v.titel}
-                className="rounded-xl border border-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+              <div key={v.titel} className="glass-card-hover p-6">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
                   <svg
-                    className="h-6 w-6"
+                    className="h-6 w-6 text-accent-light"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -171,10 +165,12 @@ export default function FuerMaklerPage() {
                     {v.icon}
                   </svg>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                <h3 className="mb-2 text-lg font-semibold text-white">
                   {v.titel}
                 </h3>
-                <p className="text-sm text-gray-500">{v.beschreibung}</p>
+                <p className="text-sm leading-relaxed text-muted">
+                  {v.beschreibung}
+                </p>
               </div>
             ))}
           </div>
@@ -182,21 +178,21 @@ export default function FuerMaklerPage() {
       </section>
 
       {/* Schritte */}
-      <section className="bg-gray-50 section-padding">
+      <section className="section-padding">
         <div className="container-wide mx-auto">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-12 text-center text-3xl font-bold text-white">
             In 3 Schritten starten
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {schritte.map((s) => (
               <div key={s.nr} className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-600 text-2xl font-bold text-white">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-surface-border bg-surface-light text-2xl font-bold text-accent-light">
                   {s.nr}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                <h3 className="mb-2 text-lg font-semibold text-white">
                   {s.titel}
                 </h3>
-                <p className="text-sm text-gray-500">{s.beschreibung}</p>
+                <p className="text-sm text-muted">{s.beschreibung}</p>
               </div>
             ))}
           </div>
@@ -205,18 +201,27 @@ export default function FuerMaklerPage() {
 
       {/* CTA */}
       <section className="section-padding">
-        <div className="container-wide mx-auto rounded-2xl bg-brand-600 px-8 py-14 text-center text-white">
-          <h2 className="text-3xl font-bold">Bereit durchzustarten?</h2>
-          <p className="mx-auto mt-3 max-w-lg text-brand-100">
-            Registrieren Sie sich jetzt und erleben Sie, wie KI Ihren Alltag als
-            Makler revolutioniert.
-          </p>
-          <Link
-            href="/fuer-makler/registrieren"
-            className="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
-          >
-            Jetzt kostenlos starten
-          </Link>
+        <div className="container-wide mx-auto">
+          <div className="relative overflow-hidden rounded-3xl border border-surface-border bg-surface-light p-10 text-center sm:p-16">
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute left-1/2 top-1/2 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/8 blur-[100px]" />
+            </div>
+            <div className="relative">
+              <h2 className="text-3xl font-bold text-white">
+                Bereit durchzustarten?
+              </h2>
+              <p className="mx-auto mt-3 max-w-lg text-muted">
+                Registrieren Sie sich jetzt und erleben Sie, wie KI Ihren Alltag
+                als Makler revolutioniert.
+              </p>
+              <Link
+                href="/fuer-makler/registrieren"
+                className="btn-primary mt-8 inline-flex"
+              >
+                Jetzt kostenlos starten
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

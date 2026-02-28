@@ -16,10 +16,10 @@ export default function ImmobilieDetailPage() {
     return (
       <div className="section-padding text-center">
         <div className="container-wide mx-auto">
-          <h1 className="text-2xl font-bold text-gray-900">
+          <h1 className="text-2xl font-bold text-white">
             Immobilie nicht gefunden
           </h1>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-muted">
             Das gesuchte Objekt existiert leider nicht.
           </p>
           <Link href="/immobilien" className="btn-primary mt-6 inline-block">
@@ -34,23 +34,26 @@ export default function ImmobilieDetailPage() {
     <div className="section-padding">
       <div className="container-wide mx-auto">
         {/* Breadcrumb */}
-        <nav className="mb-6 text-sm text-gray-400">
-          <Link href="/" className="hover:text-brand-600">
+        <nav className="mb-6 text-sm text-muted-dark">
+          <Link href="/" className="transition-colors hover:text-white">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <Link href="/immobilien" className="hover:text-brand-600">
+          <Link
+            href="/immobilien"
+            className="transition-colors hover:text-white"
+          >
             Immobilien
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-600">{property.titel}</span>
+          <span className="text-muted">{property.titel}</span>
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-3">
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Gallery */}
-            <div className="mb-6 overflow-hidden rounded-xl bg-gray-100">
+            <div className="mb-4 overflow-hidden rounded-2xl border border-surface-border bg-surface">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={property.bilder[activeImage]}
@@ -64,10 +67,10 @@ export default function ImmobilieDetailPage() {
                   <button
                     key={i}
                     onClick={() => setActiveImage(i)}
-                    className={`flex-shrink-0 overflow-hidden rounded-lg border-2 ${
+                    className={`flex-shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
                       i === activeImage
-                        ? "border-brand-500"
-                        : "border-transparent"
+                        ? "border-accent"
+                        : "border-surface-border opacity-60 hover:opacity-100"
                     }`}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -82,39 +85,39 @@ export default function ImmobilieDetailPage() {
             )}
 
             {/* Details */}
-            <h1 className="mb-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+            <h1 className="mb-2 text-2xl font-bold text-white sm:text-3xl">
               {property.titel}
             </h1>
-            <p className="mb-6 text-gray-500">
+            <p className="mb-6 text-muted">
               {property.adresse} — {property.ort}, {property.kanton}
             </p>
 
             {/* Key Stats */}
-            <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div className="rounded-lg bg-gray-50 p-4 text-center">
-                <p className="text-xs text-gray-400">Preis</p>
-                <p className="mt-1 text-lg font-bold text-brand-600">
+            <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="glass-card p-4 text-center">
+                <p className="text-xs text-muted-dark">Preis</p>
+                <p className="mt-1 text-lg font-bold text-accent-light">
                   {formatCHF(property.preis)}
                 </p>
               </div>
               {property.zimmer > 0 && (
-                <div className="rounded-lg bg-gray-50 p-4 text-center">
-                  <p className="text-xs text-gray-400">Zimmer</p>
-                  <p className="mt-1 text-lg font-bold text-gray-900">
+                <div className="glass-card p-4 text-center">
+                  <p className="text-xs text-muted-dark">Zimmer</p>
+                  <p className="mt-1 text-lg font-bold text-white">
                     {property.zimmer}
                   </p>
                 </div>
               )}
-              <div className="rounded-lg bg-gray-50 p-4 text-center">
-                <p className="text-xs text-gray-400">Fläche</p>
-                <p className="mt-1 text-lg font-bold text-gray-900">
+              <div className="glass-card p-4 text-center">
+                <p className="text-xs text-muted-dark">Fläche</p>
+                <p className="mt-1 text-lg font-bold text-white">
                   {formatFlaeche(property.flaeche)}
                 </p>
               </div>
               {property.baujahr > 0 && (
-                <div className="rounded-lg bg-gray-50 p-4 text-center">
-                  <p className="text-xs text-gray-400">Baujahr</p>
-                  <p className="mt-1 text-lg font-bold text-gray-900">
+                <div className="glass-card p-4 text-center">
+                  <p className="text-xs text-muted-dark">Baujahr</p>
+                  <p className="mt-1 text-lg font-bold text-white">
                     {property.baujahr}
                   </p>
                 </div>
@@ -122,22 +125,20 @@ export default function ImmobilieDetailPage() {
             </div>
 
             {/* Description */}
-            <h2 className="mb-3 text-xl font-semibold text-gray-900">
+            <h2 className="mb-3 text-xl font-semibold text-white">
               Beschreibung
             </h2>
-            <p className="mb-8 leading-relaxed text-gray-600">
+            <p className="mb-8 leading-relaxed text-muted">
               {property.beschreibung}
             </p>
 
             {/* Features */}
-            <h2 className="mb-3 text-xl font-semibold text-gray-900">
-              Merkmale
-            </h2>
+            <h2 className="mb-3 text-xl font-semibold text-white">Merkmale</h2>
             <div className="mb-8 flex flex-wrap gap-2">
               {property.merkmale.map((m) => (
                 <span
                   key={m}
-                  className="rounded-full bg-brand-50 px-4 py-1.5 text-sm font-medium text-brand-700"
+                  className="rounded-full border border-surface-border bg-surface-light px-4 py-1.5 text-sm text-muted"
                 >
                   {m}
                 </span>
@@ -145,8 +146,8 @@ export default function ImmobilieDetailPage() {
             </div>
 
             {/* Map Placeholder */}
-            <h2 className="mb-3 text-xl font-semibold text-gray-900">Lage</h2>
-            <div className="mb-8 flex h-64 items-center justify-center rounded-xl bg-gray-100 text-gray-400">
+            <h2 className="mb-3 text-xl font-semibold text-white">Lage</h2>
+            <div className="glass-card mb-8 flex h-64 items-center justify-center text-muted-dark">
               <div className="text-center">
                 <svg
                   className="mx-auto h-10 w-10"
@@ -167,8 +168,8 @@ export default function ImmobilieDetailPage() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <p className="mt-2 text-sm">{property.adresse}</p>
-                <p className="text-xs text-gray-300">
+                <p className="mt-2 text-sm text-muted">{property.adresse}</p>
+                <p className="text-xs text-muted-dark">
                   Karte wird mit Google Maps geladen
                 </p>
               </div>
@@ -179,11 +180,11 @@ export default function ImmobilieDetailPage() {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               {/* Agent Card */}
-              <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-1 font-semibold text-gray-900">
+              <div className="glass-card p-6">
+                <h3 className="mb-1 font-semibold text-white">
                   {property.makler.name}
                 </h3>
-                <p className="mb-4 text-sm text-gray-500">
+                <p className="mb-4 text-sm text-muted">
                   {property.makler.firma}
                 </p>
                 <a
@@ -192,23 +193,23 @@ export default function ImmobilieDetailPage() {
                 >
                   {property.makler.telefon}
                 </a>
-                <p className="text-center text-xs text-gray-400">
+                <p className="text-center text-xs text-muted-dark">
                   Oder nutzen Sie unser Kontaktformular
                 </p>
               </div>
 
               {/* Contact Form */}
-              <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-4 font-semibold text-gray-900">
+              <div className="glass-card p-6">
+                <h3 className="mb-4 font-semibold text-white">
                   Anfrage senden
                 </h3>
 
                 {formSent ? (
-                  <div className="rounded-lg bg-green-50 p-4 text-center">
-                    <p className="font-medium text-green-800">
+                  <div className="rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-center">
+                    <p className="font-medium text-green-400">
                       Anfrage gesendet!
                     </p>
-                    <p className="mt-1 text-sm text-green-600">
+                    <p className="mt-1 text-sm text-green-400/70">
                       Wir melden uns innerhalb von 24 Stunden bei Ihnen.
                     </p>
                   </div>
@@ -224,24 +225,24 @@ export default function ImmobilieDetailPage() {
                       type="text"
                       placeholder="Ihr Name"
                       required
-                      className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      className="input-dark"
                     />
                     <input
                       type="email"
                       placeholder="Ihre E-Mail"
                       required
-                      className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      className="input-dark"
                     />
                     <input
                       type="tel"
                       placeholder="Telefon (optional)"
-                      className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      className="input-dark"
                     />
                     <textarea
                       rows={4}
                       placeholder="Ihre Nachricht..."
                       defaultValue={`Guten Tag,\n\nich interessiere mich für das Objekt "${property.titel}". Bitte kontaktieren Sie mich für weitere Informationen.\n\nFreundliche Grüsse`}
-                      className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      className="input-dark"
                     />
                     <button type="submit" className="btn-primary w-full">
                       Anfrage senden

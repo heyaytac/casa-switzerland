@@ -32,7 +32,9 @@ export default function ImmobilienSuche() {
     if (typ) result = result.filter((i) => i.typ === typ);
 
     const preis = preisOptionen[preisIndex];
-    result = result.filter((i) => i.preis >= preis.min && i.preis <= preis.max);
+    result = result.filter(
+      (i) => i.preis >= preis.min && i.preis <= preis.max
+    );
 
     if (zimmerMin) {
       const min = parseFloat(zimmerMin);
@@ -52,19 +54,19 @@ export default function ImmobilienSuche() {
   return (
     <div className="section-padding">
       <div className="container-wide mx-auto">
-        <h1 className="mb-2 text-3xl font-bold text-gray-900">
+        <h1 className="mb-2 text-3xl font-bold text-white">
           Immobilien suchen
         </h1>
-        <p className="mb-8 text-gray-500">
+        <p className="mb-8 text-muted">
           {filtered.length} Objekt{filtered.length !== 1 ? "e" : ""} gefunden
         </p>
 
         {/* Filters */}
-        <div className="mb-8 grid gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mb-8 grid gap-3 rounded-2xl border border-surface-border bg-surface-light/80 p-4 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-5">
           <select
             value={kanton}
             onChange={(e) => setKanton(e.target.value)}
-            className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="select-dark"
           >
             <option value="">Alle Kantone</option>
             {kantone.map((k) => (
@@ -77,7 +79,7 @@ export default function ImmobilienSuche() {
           <select
             value={typ}
             onChange={(e) => setTyp(e.target.value)}
-            className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="select-dark"
           >
             <option value="">Alle Typen</option>
             {typen.map((t) => (
@@ -90,7 +92,7 @@ export default function ImmobilienSuche() {
           <select
             value={preisIndex}
             onChange={(e) => setPreisIndex(Number(e.target.value))}
-            className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="select-dark"
           >
             {preisOptionen.map((p, i) => (
               <option key={i} value={i}>
@@ -102,7 +104,7 @@ export default function ImmobilienSuche() {
           <select
             value={zimmerMin}
             onChange={(e) => setZimmerMin(e.target.value)}
-            className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="select-dark"
           >
             <option value="">Zimmer (alle)</option>
             <option value="1">1+ Zimmer</option>
@@ -115,7 +117,7 @@ export default function ImmobilienSuche() {
           <select
             value={sortierung}
             onChange={(e) => setSortierung(e.target.value)}
-            className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="select-dark"
           >
             <option value="neueste">Neueste zuerst</option>
             <option value="preis-aufsteigend">Preis aufsteigend</option>
@@ -132,11 +134,11 @@ export default function ImmobilienSuche() {
             ))}
           </div>
         ) : (
-          <div className="rounded-xl border border-gray-100 bg-gray-50 py-16 text-center">
-            <p className="text-lg font-medium text-gray-600">
+          <div className="glass-card py-20 text-center">
+            <p className="text-lg font-medium text-white">
               Keine Objekte gefunden
             </p>
-            <p className="mt-1 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-muted">
               Versuchen Sie, Ihre Filterkriterien anzupassen.
             </p>
           </div>
